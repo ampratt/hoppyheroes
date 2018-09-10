@@ -4,7 +4,7 @@ import Display from './display';
 import '../../node_modules/p5/lib/addons/p5.sound.min.js';
 
 // assets
-// import { unicorn } from '../assets/img/players/unicorn.png';
+// import { unicorn } from '..https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/players/unicorn.png';
 
 export default function sketch(p) {
   let bird;
@@ -39,10 +39,11 @@ export default function sketch(p) {
   p.preload = function () {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
-    crashSound = p.loadSound('/assets/sounds/tim_crash_short_loud.mp3');
-    backgroundMusic = p.loadSound('/assets/music/unicorn.mp3');
-    backgroundImage = p.loadImage('/assets/img/backgrounds/rainbow-drawing.jpg');
-    playerImage = p.loadImage('/assets/img/players/unicorn.png');
+    // https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets
+    crashSound = p.loadSound('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/sounds/tim_crash_short_loud.mp3');
+    backgroundMusic = p.loadSound('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/music/unicorn.mp3');
+    backgroundImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/backgrounds/rainbow-drawing.jpg');
+    playerImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/players/unicorn.png');
     pipeColor = [250, 133, 159];
   }
 
@@ -156,15 +157,15 @@ export default function sketch(p) {
   function _setPlayerSettings(player) {
     switch (player) {
       case 'UNICORN':
-        backgroundMusic = p.loadSound('/assets/music/unicorn.mp3');
-        backgroundImage = p.loadImage('/assets/img/backgrounds/rainbow-drawing.jpg');
-        playerImage = p.loadImage('/assets/img/players/unicorn.png');
+        backgroundMusic = p.loadSound('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/music/unicorn.mp3');
+        backgroundImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/backgrounds/rainbow-drawing.jpg');
+        playerImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/players/unicorn.png');
         pipeColor = [250, 133, 159];
         break;
       case 'BATMAN':
-        backgroundMusic = p.loadSound('/assets/music/bensound-epic.mp3');
-        backgroundImage = p.loadImage('/assets/img/backgrounds/batman_background.jpg');
-        playerImage = p.loadImage('/assets/img/players/batman.png');
+        backgroundMusic = p.loadSound('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/music/bensound-epic.mp3');
+        backgroundImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/backgrounds/batman_background.jpg');
+        playerImage = p.loadImage('https://github.com/ampratt/hoppyheroes/tree/gh-pages/assets/assets/img/players/batman.png');
         pipeColor = [188, 196, 220]; //[255, 237, 56];
         break;
       default:
