@@ -19,7 +19,7 @@ export default function sketch(p) {
   let backgroundImage;
   let playerImage;
   let pipeColor = [250, 133, 159];
-  let c;
+  // let c;
   let difficulty = 'easy';
   let history;
   let maxHits;

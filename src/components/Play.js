@@ -19,7 +19,7 @@ class Play extends Component {
   }
 
   render() {
-    const { history, match } = this.props;
+    const { history } = this.props;
     const { player, difficulty } = this.state;
     return (
       <div>

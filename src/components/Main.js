@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Play from './Play'
 
@@ -8,10 +8,12 @@ import Play from './Play'
 // when the pathname is exactly the string "/"
 const Main = () => (
   <main>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route path='/play' component={Play} />
-    </Switch>
+    <HashRouter>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/play' component={Play} />
+      </Switch>
+    </HashRouter>
   </main>
 )
 
