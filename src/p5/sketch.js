@@ -25,10 +25,14 @@ export default function sketch(p) {
   let maxHits;
 
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-    if (props.player && props.difficulty) {
+    if (props.player && props.difficulty && props.files) {
       history = props.history;
       // console.log('props redraw: ', props);
-      _setPlayerSettings(props.player.toUpperCase());
+      console.log(props.files.backgroundMusic);
+      backgroundMusic = p.loadSound(props.files.backgroundMusic);
+      backgroundImage = p.loadImage(props.files.backgroundImage);
+      playerImage = p.loadImage(props.files.playerImage);
+      _setPlayerSettings(props.player.toUpperCase(), props.files);
       difficulty = props.difficulty.toUpperCase();
       maxHits = _getMaxHits(difficulty);
       bird = new Bird(p, playerImage, crashSound, maxHits);
@@ -157,15 +161,15 @@ export default function sketch(p) {
   function _setPlayerSettings(player) {
     switch (player) {
       case 'UNICORN':
-        backgroundMusic = p.loadSound('../assets/music/unicorn.mp3');
-        backgroundImage = p.loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
-        playerImage = p.loadImage('../assets/img/players/unicorn.png');
+        // backgroundMusic = p.loadSound('../assets/music/unicorn.mp3');
+        // backgroundImage = p.loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
+        // playerImage = p.loadImage('../assets/img/players/unicorn.png');
         pipeColor = [250, 133, 159];
         break;
       case 'BATMAN':
-        backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
-        backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
-        playerImage = p.loadImage('../assets/img/players/batman.png');
+        // backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
+        // backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
+        // playerImage = p.loadImage('../assets/img/players/batman.png');
         pipeColor = [188, 196, 220]; //[255, 237, 56];
         break;
       default:
