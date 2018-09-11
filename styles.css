@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+/* pageBackground */
+html {
+    /* background: radial-gradient(#ba3e7d, #9d38d2) */
+    background: radial-gradient(ellipse at top, #ba3e7d, transparent),
+            radial-gradient(ellipse at bottom, #9d38d2, transparent);
+}
+
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    color: black;
+    text-align: center;
+  /* font-family: sans-serif; */
+}
+
+
+.menuSelectors {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.menuSelectors > *, .link {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.difficultiesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+/* settings */
+.difficultyBtn {
+    margin: 10px;
+}
+.difficultyBtn:hover {
+    cursor: pointer;
+}
+
+.playerSelectorsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 10px;
+    margin: 10px;
+}
+.playerSelector {
+    margin: 8px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+}
+.playerSelector:hover, .playerSelector:active {
+    transform: scale(1.1);
+    /* transform: scale3d(1, 1.2, 1.5); */
+}
+.playerSelectorLogo {
+    width: 55px;
+    height: auto;
+}
+.selected, .selected > * {
+    color: #09e905 !important ;
+    transform: scale(1.1);
+}
+
+.settingsBtn {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.playBtnWrapper {
+    display: flex;
+    justify-content: center;
+}
+#playBtn {
+    background: #09e905;
+    padding: 12px 25px;
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+}
+#playBtn:hover {
+    background: #05b202;
+}
+
+
+/* Game classes */
+.scoreDisplay {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.exitBtn {
+    padding: 8px 13px;
+    background: #09e905;
+    border: none;
+    max-height: 35px;
+    /* margin-top: 10px; */
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    text-decoration: none;
+    align-self: center;
+}
+
+#p5_loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
