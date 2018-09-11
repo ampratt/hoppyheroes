@@ -33,27 +33,65 @@ let maxHits;
 //   }
 // };
 
+
+_setPlayerSettings = (player) => {
+  switch (player) {
+    case 'UNICORN':
+      backgroundMusic = loadSound('../assets/music/unicorn.mp3');
+      backgroundImage = loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
+      playerImage = loadImage('../assets/img/players/unicorn.png');
+      pipeColor = [250, 133, 159];
+      break;
+    case 'BATMAN':
+      backgroundMusic = loadSound('../assets/music/bensound-epic.mp3');
+      backgroundImage = loadImage('../assets/img/backgrounds/batman_background.jpg');
+      playerImage = loadImage('../assets/img/players/batman.png');
+      pipeColor = [188, 196, 220]; //[255, 237, 56];
+      break;
+    default:
+      break;
+  }
+}
+
+getGameParameters = () => {
+  // console.log('url settings');
+  player = localStorage.getItem('player');
+  difficultyLevel = localStorage.getItem('difficulty');
+  // console.log('localstorage: ', difficultyLevel, player);
+  return { 'player': player, 'difficultyLevel': difficultyLevel };
+  // const params = new URLSearchParams(location.search);
+  // const settings = [params.get('player'), params.get('difficulty')];
+  // console.log('settings: ', settings);
+  // return settings;
+}
+
 preload = function () {
   // console.log('preload');
+
   soundFormats('mp3', 'ogg');
-  // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
+  let { player, difficultyLevel } = getGameParameters();
+  _setPlayerSettings(player.toUpperCase());
+  difficulty = difficultyLevel.toUpperCase();
+  maxHits = _getMaxHits(difficulty);
   crashSound = loadSound('./assets/sounds/tim_crash_short_loud.mp3');
-  backgroundMusic = loadSound('./assets/music/unicorn.mp3');
-  backgroundImage = loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
-  playerImage = loadImage('./assets/img/players/unicorn.png');
-  pipeColor = [250, 133, 159];
+  bird = new Bird(playerImage, crashSound, maxHits);
+  scoreDisplay = new Display(bird, backgroundMusic, crashSound, maxHits);
+
+
+  // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
+  // backgroundMusic = loadSound('./assets/music/unicorn.mp3');
+  // backgroundImage = loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
+  // playerImage = loadImage('./assets/img/players/unicorn.png');
+  // pipeColor = [250, 133, 159];
 }
 
 setup = function () {
   // put setup code here
-  _setPlayerSettings('UNICORN');
-  difficulty = 'EASY'
-  maxHits = _getMaxHits(difficulty);
-
+  // console.log('setup');
   // bird = new Bird(p, playerImage, crashSound);
-  bird = new Bird(playerImage, crashSound, maxHits);
+  // bird = new Bird(playerImage, crashSound, maxHits);
   // scoreDisplay = new Display(p, bird, backgroundMusic, crashSound);
-  scoreDisplay = new Display(bird, backgroundMusic, crashSound, maxHits);
+  // scoreDisplay = new Display(bird, backgroundMusic, crashSound, maxHits);
   bird;
   scoreDisplay;
   scoreDisplay.show();
@@ -157,24 +195,6 @@ function _getMaxHits(difficulty) {
   return 10;
 }
 
-function _setPlayerSettings(player) {
-  switch (player) {
-    case 'UNICORN':
-      // backgroundMusic = loadSound('../assets/music/unicorn.mp3');
-      // backgroundImage = loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
-      // playerImage = loadImage('../assets/img/players/unicorn.png');
-      pipeColor = [250, 133, 159];
-      break;
-    case 'BATMAN':
-      // backgroundMusic = loadSound('../assets/music/bensound-epic.mp3');
-      // backgroundImage = loadImage('../assets/img/backgrounds/batman_background.jpg');
-      // playerImage = loadImage('../assets/img/players/batman.png');
-      pipeColor = [188, 196, 220]; //[255, 237, 56];
-      break;
-    default:
-      break;
-  }
-}
 
 
 

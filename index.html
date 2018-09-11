@@ -19,13 +19,25 @@
     <div>
       <h1>Hoppy Heroes</h1>
       <div class="menuSelectors">
+        <h2 style="margin-bottom:0">Difficulty</h2>
         <div class="difficultiesWrapper">
-          <button role="button" class="difficultyBtn" id="easy">Easy</button>
-          <button role="button" class="difficultyBtn" id="medium">Medium</button>
-          <button role="button" class="difficultyBtn" id="hard">Hard</button>
+          <button role="button" class="difficultyBtn" id="easy" value="easy">Easy</button>
+          <button role="button" class="difficultyBtn" id="medium" value="medium">Medium</button>
+          <button role="button" class="difficultyBtn" id="hard" value="hard"> Hard</button>
         </div>
+
+        <h2 style="margin-bottom:0">Players</h2>
         <div class="playerSelectorsWrapper">
-          players
+          <button role="button" class="playerSelector" id="unicorn" value="unicorn">
+            <div>
+              <img src="./assets/img/players/unicorn.png" alt="unicorn" class="playerSelectorLogo">
+              <h4>Unicorn</h4>
+            </div>
+          </button>
+          <button role="button" class="playerSelector" id="batman" value="batman">
+            <img src="./assets/img/players/batman.png" alt="batman" class="playerSelectorLogo">
+            <h4>Batman</h4>
+          </button>
         </div>
         <div class="playBtnWrapper">
           <a href="" id="playBtn">Play</a>

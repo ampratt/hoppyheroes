@@ -47,13 +47,25 @@ body {
     justify-content: center;
     padding: 10px;
     margin: 10px;
+
+    background: linear-gradient(to right, transparent, rgba(173, 216, 230, 0.5), transparent);
 }
 /* settings */
 .difficultyBtn {
-    margin: 10px;
+    margin: 0 10px 10px;
+    padding: 5px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
-.difficultyBtn:hover {
+.difficultyBtn:hover, .difficultyBtn:active, .difficultyBtn:focus  {
+    outline:0;
+    transform: scale(1.15);
     cursor: pointer;
+    /* transform: scale3d(1, 1.2, 1.5); */
 }
 
 .playerSelectorsWrapper {
@@ -63,6 +75,8 @@ body {
     justify-content: center;
     padding: 10px 10px;
     margin: 10px;
+
+    background: linear-gradient(to right, transparent, rgba(173, 216, 230, 0.5), transparent);
 }
 .playerSelector {
     margin: 8px 15px;
@@ -72,18 +86,30 @@ body {
     align-items: center;
     text-align: center;
     transition: 0.3s;
+
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
 }
-.playerSelector:hover, .playerSelector:active {
+.playerSelector:hover, .playerSelector:active, .playerSelector:focus {
+    outline:0;
     transform: scale(1.1);
+    cursor: pointer;
     /* transform: scale3d(1, 1.2, 1.5); */
 }
 .playerSelectorLogo {
     width: 55px;
     height: auto;
 }
+.playerSelector h4 {
+    margin: 8px;
+}
+
 .selected, .selected > * {
     color: #09e905 !important ;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 .settingsBtn {
