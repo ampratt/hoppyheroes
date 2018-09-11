@@ -44,10 +44,10 @@ export default function sketch(p) {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
-    crashSound = p.loadSound('../assets/sounds/tim_crash_short_loud.mp3');
-    backgroundMusic = p.loadSound('../assets/music/unicorn.mp3');
-    backgroundImage = p.loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
-    playerImage = p.loadImage('../assets/img/players/unicorn.png');
+    crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
+    backgroundMusic = p.loadSound('./assets/music/unicorn.mp3');
+    backgroundImage = p.loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
+    playerImage = p.loadImage('./assets/img/players/unicorn.png');
     pipeColor = [250, 133, 159];
   }
 
