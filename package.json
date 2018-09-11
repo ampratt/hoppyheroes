@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "deploy": "gh-pages-deploy",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +21,5 @@
   "bugs": {
     "url": "https://github.com/ampratt/hoppyheroes/issues"
   },
-  "devDependencies": {
-    "gh-pages-deploy": "^0.5.0"
-  }
+  "devDependencies": {}
 }
