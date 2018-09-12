@@ -25,7 +25,7 @@ function Display(bird, music, crashSound, maxHits) {
     this.scoreDisplay.parent(this.display);
 
     // this.button = createButton('Exit');
-    this.button = createA('/', 'Exit');
+    this.button = createA('./', 'Exit');
     // this.button.position(windowWidth, windowHeight);
     this.button.class('exitBtn');
     this.button.parent(this.display);
