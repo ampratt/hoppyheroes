@@ -1,5 +1,5 @@
 // assets
-// import { unicorn } from '..../assets/img/players/unicorn.png';
+// import { unicorn } from '..assets/img/players/unicorn.png';
 let bird;
 let pipes = [];
 let scoreDisplay;
@@ -37,15 +37,15 @@ let maxHits;
 _setPlayerSettings = (player) => {
   switch (player) {
     case 'UNICORN':
-      backgroundMusic = loadSound('../assets/music/unicorn.mp3');
-      backgroundImage = loadImage('../assets/img/backgrounds/rainbow-drawing.jpg');
-      playerImage = loadImage('../assets/img/players/unicorn.png');
+      backgroundMusic = loadSound('assets/music/unicorn.mp3');
+      backgroundImage = loadImage('assets/img/backgrounds/rainbow-drawing.jpg');
+      playerImage = loadImage('assets/img/players/unicorn.png');
       pipeColor = [250, 133, 159];
       break;
     case 'BATMAN':
-      backgroundMusic = loadSound('../assets/music/bensound-epic.mp3');
-      backgroundImage = loadImage('../assets/img/backgrounds/batman_background.jpg');
-      playerImage = loadImage('../assets/img/players/batman.png');
+      backgroundMusic = loadSound('assets/music/bensound-epic.mp3');
+      backgroundImage = loadImage('assets/img/backgrounds/batman_background.jpg');
+      playerImage = loadImage('assets/img/players/batman.png');
       pipeColor = [188, 196, 220]; //[255, 237, 56];
       break;
     default:
@@ -78,7 +78,7 @@ preload = function () {
   scoreDisplay = new Display(bird, backgroundMusic, crashSound, maxHits);
 
 
-  // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
+  // https://github.com/ampratt/hoppyheroes/tree/gh-pagesassets
   // backgroundMusic = loadSound('./assets/music/unicorn.mp3');
   // backgroundImage = loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
   // playerImage = loadImage('./assets/img/players/unicorn.png');
