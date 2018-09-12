@@ -108,7 +108,7 @@ body {
 }
 
 .selected, .selected > * {
-    color: #09e905 !important ;
+    color: #03c700 !important ;
     transform: scale(1.15);
 }
 
@@ -125,7 +125,8 @@ body {
     justify-content: center;
 }
 #playBtn {
-    background: #09e905;
+    background: #03c700;
+     /* #09e905; */
     padding: 12px 25px;
     color: black;
     margin: 10px;
@@ -146,6 +147,7 @@ body {
 }
 .exitBtn {
     padding: 8px 13px;
+    color: black !important;
     background: #09e905;
     border: none;
     max-height: 35px;
