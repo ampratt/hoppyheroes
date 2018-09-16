@@ -13,7 +13,6 @@ export default function Bird(p, playerImage, crashSound, maxHits) {
   this.gameover = false;
   this.crashed = false;
   this.highlightDuration = 0;
-  this.gameover = false;
   this.hitCeilingFloor = false;
   this.hitPipe = false;
   this.ranSound = false;
@@ -56,9 +55,11 @@ export default function Bird(p, playerImage, crashSound, maxHits) {
     this.highlightDuration = p.frameCount;
   }
 
+  this.pressExitButton = () => this.gameover = true;
+
   this.getHitCount = () => this.hitCount;
 
-  this.isGameOver = () => this.hitCount === 0;
+  this.isGameOver = () => this.hitCount === 0 || this.gameover;
 
   this.update = () => {
     this.velocity += this.gravity;

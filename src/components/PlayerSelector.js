@@ -9,7 +9,7 @@ const PlayerSelector = ({ name, handlePlayerSelection, selected }) => {
   return (
     <div className={classes} onClick={() => { handlePlayerSelection(name) }}>
       <img src={`./assets/img/players/${name}.png`} className="playerSelectorLogo" alt="player-logo" />
-      <h3>{name}</h3>
+      <h3 className="playerSelectorTitle">{name}</h3>
     </div>
   );
 }

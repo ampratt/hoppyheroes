@@ -1,21 +1,25 @@
 import '../../node_modules/p5/lib/addons/p5.dom.min.js';
 
-export default function Display(p, bird, music, crashSound, history, maxHits) {
+// export default function Display(p, bird, music, crashSound, history, maxHits) {
+export default function Display(p, bird, maxHits) {
 
   this.score = 0;
   this.distance = 0;
   this.hitCount = maxHits;
   this.penalty = 0;
+  this.exit = 0;
 
   function quitGame() {
-    music.stop();
-    crashSound.stop();
-    p.remove();
+    bird.pressExitButton();
     // var urlPath = p.getURLPath();
     // console.log('url: ', urlPath);
-    history.push('/');
+    // music.stop();
+    // crashSound.stop();
+    // p.remove();
+    // history.push('/');
     // window.location = '/';
   }
+
   this.show = function () {
     this.display = p.createDiv(''); //.size(p.windowWidth, p.windowHeight);
     this.display.class('scoreDisplay');
@@ -32,6 +36,11 @@ export default function Display(p, bird, music, crashSound, history, maxHits) {
     this.button.parent(this.display);
     this.button.mousePressed(quitGame);
   }
+
+  // this.setHistory = (h) => history = h;
+
+  this.isGameOver = () => this.exit;
+
 
   this.update = function () {
     this.hitCount = bird.getHitCount();

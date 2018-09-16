@@ -34,7 +34,19 @@ body {
 .menuSelectors > *, .link {
     color: black;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+}
+
+.selectionArea {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+.selectionArea > .title {
+    margin: 5px;
 }
 
 .difficultiesWrapper {
@@ -42,8 +54,9 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
+    /* padding: 10px; */
     margin: 10px;
+    background: linear-gradient(to right, transparent, rgba(173, 216, 230, 0.5), transparent);
 }
 .playerSelectorsWrapper {
     display: flex;
@@ -52,6 +65,7 @@ body {
     justify-content: center;
     padding: 0 10px;
     margin: 10px;
+    background: linear-gradient(to right, transparent, rgba(173, 216, 230, 0.5), transparent);
 }
 .playerSelector {
     margin: 8px 15px;
@@ -64,11 +78,15 @@ body {
 }
 .playerSelector:hover, .playerSelector:active {
     transform: scale(1.1);
+    cursor: pointer;
     /* transform: scale3d(1, 1.2, 1.5); */
 }
 .playerSelectorLogo {
     width: 55px;
     height: auto;
+}
+.playerSelectorTitle {
+    margin: 10px 0;
 }
 .selected, .selected > * {
     color: #09e905 !important ;
