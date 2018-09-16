@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import P5Wrapper from 'react-p5-wrapper';
-import { default as unicornSketch } from '../p5/sketch';
-import { default as batmanSketch } from '../p5/batman/sketch';
+import { default as unicornSketch } from '../p5Unicorn/sketch';
+import { default as batmanSketch } from '../p5Batman/sketch';
 import queryString from 'query-string';
 
 // ({ history, match, location })

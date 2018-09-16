@@ -1,7 +1,7 @@
-import Bird from './bird';
-import Pipe from './pipe';
-import Display from './display';
-import '../../node_modules/p5/lib/addons/p5.sound.min.js';
+import Bird from '../p5/bird';
+import Pipe from '../p5/pipe';
+import Display from '../p5/display';
+import 'p5/lib/addons/p5.sound.min';
 
 // assets
 // import { unicorn } from '..../assets/img/players/unicorn.png';
@@ -45,18 +45,16 @@ export default function sketch(p) {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
-    crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
-    backgroundMusic = p.loadSound('./assets/music/unicorn.mp3');
-    backgroundImage = p.loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
-    playerImage = p.loadImage('./assets/img/players/unicorn.png');
-    pipeColor = [250, 133, 159];
+    crashSound = p.loadSound('../assets/sounds/tim_crash_short_loud.mp3');
+    backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
+    backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
+    playerImage = p.loadImage('../assets/img/players/batman.png');
+    pipeColor = [188, 196, 220];
 
     difficulty = localStorage.getItem('difficulty').toUpperCase();;
     maxHits = _getMaxHits(difficulty);
     bird = new Bird(p, playerImage, crashSound, maxHits);
     scoreDisplay = new Display(p, bird, maxHits);
-
-    // scoreDisplay; // new Display(p, bird, backgroundMusic, crashSound, null, maxHits);
   }
 
   p.setup = function () {
@@ -75,7 +73,6 @@ export default function sketch(p) {
     backgroundMusic.playMode('restart');
     backgroundMusic.play();
   };
-
 
   p.windowResized = function () {
     p.resizeCanvas(p.windowWidth, p.windowHeight - 60);
