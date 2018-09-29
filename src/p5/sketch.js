@@ -27,7 +27,7 @@ export default function sketch(p) {
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
     if (props.history) {
       history = props.history;
-      console.log('props redraw: ', props);
+      // console.log('props redraw: ', props);
       // console.log(props.files.backgroundMusic);
       // backgroundMusic = p.loadSound(props.files.backgroundMusic);
       // backgroundImage = p.loadImage(props.files.backgroundImage);
@@ -45,10 +45,14 @@ export default function sketch(p) {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
-    crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
-    backgroundMusic = p.loadSound('./assets/music/unicorn.mp3');
-    backgroundImage = p.loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
-    playerImage = p.loadImage('./assets/img/players/unicorn.png');
+    // ./assets/sounds / tim_crash_short_loud.mp3
+    crashSound = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205882/hoppyfriends/sounds/tim_crash_short_loud.mp3');
+    // ./assets/music / unicorn.mp3
+    backgroundMusic = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538208579/hoppyfriends/music/unicorn.mp3');
+    backgroundImage = p.loadImage('https://res.cloudinary.com/firsttimothy/image/upload/v1538206065/hoppyfriends/img/backgrounds/rainbow-drawing.jpg');
+    // backgroundImage = p.loadImage('./assets/img/backgrounds/rainbow-drawing.jpg');
+    playerImage = p.loadImage('https://res.cloudinary.com/firsttimothy/image/upload/v1538206080/hoppyfriends/img/players/unicorn.png');
+    // playerImage = p.loadImage('./assets/img/players/unicorn.png');
     pipeColor = [250, 133, 159];
 
     difficulty = localStorage.getItem('difficulty').toUpperCase();;

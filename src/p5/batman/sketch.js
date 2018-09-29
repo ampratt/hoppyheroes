@@ -27,7 +27,7 @@ export default function sketch(p) {
   p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
     if (props.history) {
       history = props.history;
-      console.log('props redraw: ', props);
+      // console.log('props redraw: ', props);
       // console.log(props.files.backgroundMusic);
       // backgroundMusic = p.loadSound(props.files.backgroundMusic);
       // backgroundImage = p.loadImage(props.files.backgroundImage);
@@ -45,10 +45,14 @@ export default function sketch(p) {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
-    crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
-    backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
-    backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
-    playerImage = p.loadImage('../assets/img/players/batman.png');
+    // crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
+    crashSound = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205882/hoppyfriends/sounds/tim_crash_short_loud.mp3');
+    backgroundMusic = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205886/hoppyfriends/music/bensound-epic.mp3');
+    backgroundImage = p.loadImage('https://res.cloudinary.com/firsttimothy/image/upload/v1538208787/hoppyfriends/img/backgrounds/batman_background.jpg');
+    playerImage = p.loadImage('https://res.cloudinary.com/firsttimothy/image/upload/v1538208831/hoppyfriends/img/players/batman.png');
+    // backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
+    // backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
+    // playerImage = p.loadImage('../assets/img/players/batman.png');
     pipeColor = [188, 196, 220];
 
     difficulty = localStorage.getItem('difficulty').toUpperCase();;

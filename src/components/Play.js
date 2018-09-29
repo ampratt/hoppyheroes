@@ -4,6 +4,9 @@ import { default as unicornSketch } from '../p5/sketch';
 import { default as batmanSketch } from '../p5/batman/sketch';
 import queryString from 'query-string';
 
+// import axios from 'axios';
+// import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
+
 // ({ history, match, location })
 class Play extends Component {
   constructor(props) {
@@ -13,6 +16,17 @@ class Play extends Component {
       difficulty: 'easy',
       files: null
     }
+  }
+
+  componentDidMount() {
+    // this.getSettingsFromQueryParams();
+    // this._setPlayerSettings(parsedParams.player.toUpperCase());
+    this.getSettingsFromLocalStorage();
+    // axios.get('https://res.cloudinary.com/christekh/image/list/xmas.json')
+    //   .then(res => {
+    //     console.log(res.data.resources);
+    //     this.setState({ gallery: res.data.resources });
+    //   });
   }
 
   getSettingsFromQueryParams = () => {
@@ -30,12 +44,6 @@ class Play extends Component {
       player: player !== null ? player : this.state.player,
       difficulty: difficulty !== null ? difficulty : this.state.difficulty
     });
-  }
-
-  componentDidMount() {
-    // this.getSettingsFromQueryParams();
-    // this._setPlayerSettings(parsedParams.player.toUpperCase());
-    this.getSettingsFromLocalStorage();
   }
 
   // _setPlayerSettings = (player) => {
@@ -96,4 +104,5 @@ class Play extends Component {
 
 export default Play;
 
+// <Image cloudName="firsttimothy" publicId="https://res.cloudinary.com/firsttimothy/image/upload/v1538206065/hoppyfriends/img/backgrounds/rainbow-drawing.jpg" width="300" crop="scale" />
 // <P5Wrapper sketch={sketch} player={player} difficulty={difficulty} files={files} history={history} />
