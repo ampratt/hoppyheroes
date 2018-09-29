@@ -46,6 +46,7 @@ export default function sketch(p) {
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
     // ./assets/sounds / tim_crash_short_loud.mp3
+    console.log('unicorn cloudinary');
     crashSound = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205882/hoppyfriends/sounds/tim_crash_short_loud.mp3');
     // ./assets/music / unicorn.mp3
     backgroundMusic = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538208579/hoppyfriends/music/unicorn.mp3');

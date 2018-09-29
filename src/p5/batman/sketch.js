@@ -46,6 +46,7 @@ export default function sketch(p) {
     p.soundFormats('mp3', 'ogg');
     // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
     // crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
+    console.log('Batman cloudinary');
     crashSound = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205882/hoppyfriends/sounds/tim_crash_short_loud.mp3');
     backgroundMusic = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205886/hoppyfriends/music/bensound-epic.mp3');
     backgroundImage = p.loadImage('https://res.cloudinary.com/firsttimothy/image/upload/v1538208787/hoppyfriends/img/backgrounds/batman_background.jpg');
