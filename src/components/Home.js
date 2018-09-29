@@ -15,7 +15,7 @@ class Home extends Component {
 
   componentDidMount() {
     // this.getSettingsFromLocalStorage();
-    console.log('mounted', localStorage.difficulty);
+    // console.log(`mounted ${localStorage.difficulty}, ${localStorage.player}`);
     if (localStorage.player !== null) {
       this.setState({ player: localStorage.player });
       localStorage.setItem('player', this.state.player);

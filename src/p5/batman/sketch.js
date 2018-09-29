@@ -1,6 +1,6 @@
-import Bird from '../p5/bird';
-import Pipe from '../p5/pipe';
-import Display from '../p5/display';
+import Bird from '../bird';
+import Pipe from '../pipe';
+import Display from '../display';
 import 'p5/lib/addons/p5.sound.min';
 
 // assets
@@ -44,6 +44,8 @@ export default function sketch(p) {
   p.preload = function () {
     // console.log('preload');
     p.soundFormats('mp3', 'ogg');
+    // https://github.com/ampratt/hoppyheroes/tree/gh-pages../assets
+    // crashSound = p.loadSound('./assets/sounds/tim_crash_short_loud.mp3');
     console.log('Batman cloudinary');
     crashSound = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205882/hoppyfriends/sounds/tim_crash_short_loud.mp3');
     backgroundMusic = p.loadSound('https://res.cloudinary.com/firsttimothy/video/upload/v1538205886/hoppyfriends/music/bensound-epic.mp3');
@@ -52,6 +54,7 @@ export default function sketch(p) {
     // backgroundMusic = p.loadSound('../assets/music/bensound-epic.mp3');
     // backgroundImage = p.loadImage('../assets/img/backgrounds/batman_background.jpg');
     // playerImage = p.loadImage('../assets/img/players/batman.png');
+    pipeColor = [188, 196, 220];
 
     difficulty = localStorage.getItem('difficulty').toUpperCase();;
     maxHits = _getMaxHits(difficulty);
